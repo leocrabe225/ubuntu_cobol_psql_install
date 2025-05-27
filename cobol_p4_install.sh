@@ -1,5 +1,5 @@
-apt-get update
-apt-get upgrade
+apt-get update -y
+apt-get upgrade -y
 apt-get install wget xz-utils make libdb5.3++-dev git gnupg2 lsb-release -y
 apt-get install gnucobol3 -y
 apt-get remove gnucobol3 -y
@@ -20,7 +20,7 @@ apt install postgresql-15 postgresql-client-15 -y
 cp pg_hba.conf /etc/postgresql/15/main/pg_hba.conf
 systemctl enable postgresql
 systemctl start postgresql
-git clone git@github.com:opensourcecobol/Open-COBOL-ESQL.git
+git clone https://github.com/opensourcecobol/Open-COBOL-ESQL.git
 cd Open-COBOL-ESQL
 
 apt install libpq-dev -y
@@ -33,11 +33,11 @@ automake --add-missing
 ./configure
 make
 make install
-echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
-echo 'export COB_LDFLAGS="-Wl,--no-as-needed"' >> ~/.bashrc
-mkdir ~/Copybook
-cp copy/sqlca.cbl ~/Copybook/.
-echo 'export COBCPY=~/Copybook/' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' >> $ACTUAL_HOME/.bashrc
+echo 'export COB_LDFLAGS="-Wl,--no-as-needed"' >> $ACTUAL_HOME/.bashrc
+mkdir $ACTUAL_HOME/Copybook
+cp copy/sqlca.cbl $ACTUAL_HOME/Copybook/.
+echo "export COBCPY=$ACTUAL_HOME/Copybook/" >> $ACTUAL_HOME/.bashrc
 cd ..
 # ocesql testoce.cbl testoce.cob
 # cobc -x -locesql -o run testoce.cob
