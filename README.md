@@ -1,4 +1,6 @@
 # Ubuntu_COBOL_psql_install
+`./start.sh` to execute the script.
+
 This .sh script installs a lot of packages needed to install and compile :
 - GnuCOBOL 3.1.2
 - psql & Postgresql
