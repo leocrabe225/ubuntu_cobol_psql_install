@@ -45,6 +45,7 @@ mkdir $ACTUAL_HOME/temp_install
 make
 make install
 sudo cp -rf $ACTUAL_HOME/temp_install/* /usr/local
+rm -rf $ACTUAL_HOME/temp_install
 export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 export COB_LDFLAGS="-Wl,--no-as-needed"
 export COBCPY="$ACTUAL_HOME/Copybook/"
