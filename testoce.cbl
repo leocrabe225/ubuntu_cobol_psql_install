@@ -9,7 +9,7 @@
        
        EXEC SQL BEGIN DECLARE SECTION END-EXEC.
        01  NOM-PERSONNE   PIC X(100).
-       01  USERNAME       PIC X(30) VALUE "cobol".
+       01  USERNAME       PIC X(30) VALUE "postgres".
        01  PASSWD         PIC X(30) VALUE "mdp".
        01  DBNAME         PIC X(10) VALUE "testdb".
        EXEC SQL END DECLARE SECTION END-EXEC.
@@ -44,3 +44,4 @@
            DISPLAY "Déconnexion réussie."
            
            STOP RUN.
+           
